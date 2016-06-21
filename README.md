@@ -1,7 +1,7 @@
 # biosensor_design
 scripts used in the design of biosensors
 
-Note:
+note:
 
   scripts closely rely on the Rosetta software suite
   
