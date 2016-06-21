@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-
+"""Transverses input log files from revert_design_to_native application in rosetta
+returns avg and var of mutations before and after reversion
+output is displayed as histogram"""
 
 import argparse
 import numpy as np

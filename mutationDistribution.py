@@ -8,6 +8,8 @@ from matplotlib.patches import Rectangle
 
 
 def compare_seq(wt_fasta, query_fasta_list):
+    """populates dictionary of mutated positions
+    key is a tuple (residue, position) and key is frequency count"""
     mut_pos_dict = {}
     num_mut_per_query = []
     with open(wt_fasta, 'r') as f:
@@ -40,6 +42,7 @@ def compare_seq(wt_fasta, query_fasta_list):
 
 
 def dict2array3d(d):
+    """extract numpy arrays from dictionary"""
     sorted_list = sorted(d.items())
     key_tup, value_tup = zip(*sorted_list)
     key0_tup, key1_tup = zip(*key_tup)
@@ -50,6 +53,7 @@ def dict2array3d(d):
 
 
 def mk_heat_map(mut_dict, wt_seq, query_fasta_list):
+    """create heat map of mutated residues and use subplot to identify wt residues"""
     pos_array, res_array, count_array = dict2array3d(mut_dict)
 
     unique_mut_pos_list = list(np.unique(pos_array))
@@ -107,12 +111,14 @@ def mk_heat_map(mut_dict, wt_seq, query_fasta_list):
 
 
 def gen_stats(mut_per_struct_list):
+    """calculate avg and var for output in console"""
     avg_mut = np.average(mut_per_struct_list)
     var_mut = np.var(mut_per_struct_list)
     print "Average number of mutations per structure is {} with variance {}".format(avg_mut, var_mut)
 
 
 def main(wt_fasta, query_fasta_list, heat_map_bool):
+    """calls child functions"""
     mut_dict, mut_per_struct_list, wt_seq = compare_seq(wt_fasta, query_fasta_list)
     gen_stats(mut_per_struct_list)
     if heat_map_bool:

@@ -7,6 +7,7 @@ import argparse
 
 
 def get_tags(fastas):
+    """extract pdb identifier from fasta files"""
     tags = []
     for fasta in fastas:
         with open(fasta, 'r') as f:
@@ -22,6 +23,7 @@ def get_tags(fastas):
 
 
 def unique_sc(score, fastas):
+    """use tags to populate a unique score file from the composite score file"""
     tags = get_tags(fastas)
     with open(score, 'r') as f:
         out_file = score.split('.')[0] + '_unique.' + score.split('.')[1]
