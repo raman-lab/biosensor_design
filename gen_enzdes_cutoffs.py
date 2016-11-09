@@ -130,7 +130,7 @@ def SD_cutoff(items, n, op, dev):
     values = [float(i[n]) for i in items]
     mean = sum(values)/len(values)
     sd = sqrt( sum([ (v-mean)**2 for v in values ])/len(values) )
-    cutoff = median + (float(dev) * sd)
+    cutoff = mean + (float(dev) * sd)
     #Try to account for rounding issues
     if op == "<":
         cutoff += 0.01
