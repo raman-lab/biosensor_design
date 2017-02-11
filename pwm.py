@@ -55,11 +55,9 @@ def output(counts):
         sys.stdout.write('\n')
 
 
-def make_heat_map(counts, wt_dict):
-    almost_gray = '#808080'
+def make_heat_map(counts, wt_dict, input_file):
     almost_black = '#262626'
     positions = np.array(list(counts.keys()))
-    #residues = np.array(list(counts.values().keys()))
 
     xi = np.arange(len(positions))
     yi = np.arange(len(possible))
@@ -88,27 +86,31 @@ def make_heat_map(counts, wt_dict):
     x_label = list(positions)
     y_label = list(possible)
     masked_Z = np.ma.array(Z, mask=np.isnan(Z))
+
     fig, ax = plt.subplots()
-    heat_map = ax.pcolormesh(masked_Z, cmap='RdBu_r')
+    heat_map = ax.pcolormesh(masked_Z, cmap='coolwarm')
     ax.set_xticks(xi + 0.5, minor=False)
     ax.set_yticks(yi + 0.5, minor=False)
     ax.set_xticklabels(x_label, minor=False)
     ax.set_yticklabels(y_label, minor=False)
     ax.xaxis.label.set_color(almost_black)
-    #ax.set_xlim(0, 13)
+    # ax.set_xlim(0, 13)
     ax.yaxis.label.set_color(almost_black)
     ax.tick_params(direction='out', labelsize=10, top=False, right=False)
 
     for k in range(0, len(xbox)):
         ax.add_patch(Rectangle((xbox[k], ybox[k]), 1, 1, fill=False, edgecolor=almost_black, lw=2))
     plt.colorbar(heat_map)
-    plt.savefig('heat_map.png', format='png', dpi=1000)
+    plt.savefig('{0}.png'.format(input_file.split('.')[0]), format='png', dpi=1000)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Makes position weight matrix for given fasta sequences")
     parser.add_argument("-m", "--heat_map", action="store_true",
-                        help="invokes heat map visualisation")
+                        help="invokes heat map visualisation. output is png image. "
+                             "name is chosen from first input fasta")
+    parser.add_argument("-s", "--silent", action="store_true",
+                        help="do not write pwm to stdout")
     requiredO = parser.add_argument_group('required arguments')
     requiredO.add_argument("-w", "--wt_fasta", required=True,
                            help="fasta file for wild type protein seq")
@@ -119,7 +121,8 @@ if __name__ == "__main__":
     counts = {}
     for filename in args.fasta:
         main(filename, counts)
-    output(counts)
+    if not args.silent:
+        output(counts)
     with open(args.wt_fasta, 'r') as f:
         f.next()
         wt_sequence = f.next()
@@ -129,4 +132,5 @@ if __name__ == "__main__":
             continue
         else:
             wt_dict[index + 1] = {character: 1}
-    make_heat_map(counts, wt_dict)
+    if args.heat_map:
+        make_heat_map(counts, wt_dict, args.fasta[0])

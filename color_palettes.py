@@ -3,6 +3,7 @@
 the colors were chosen to maximize constrast within the set"""
 
 palette = {
+    1: ["#96578a"],
     2: ["#99a765", "#96578a"],
     3: ["#8fb771", "#875da7", "#a85b4a"],
     4: ["#b65a49", "#99c161", "#8f50ab", "#738488"],

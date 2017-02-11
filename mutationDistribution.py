@@ -3,6 +3,7 @@
 # Calculates number of mutations per structure and makes heat map
 import argparse
 import numpy as np
+import math
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
@@ -52,9 +53,10 @@ def dict2array3d(d):
     return key0_array, key1_array, value_array
 
 
-def mk_heat_map(mut_dict, wt_seq, query_fasta_list):
+def mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, name):
     """create heat map of mutated residues and use subplot to identify wt residues"""
     pos_array, res_array, count_array = dict2array3d(mut_dict)
+    almost_black = '#262626'
 
     unique_mut_pos_list = list(np.unique(pos_array))
     wt_dict = {}
@@ -83,21 +85,44 @@ def mk_heat_map(mut_dict, wt_seq, query_fasta_list):
     Z = np.zeros(Xi.shape)
     xbox = []
     ybox = []
-    for i in xi:
-        for j in yi:
-            try:
-                Z[j, i] = mut_dict[(unique_pos_array[i], unique_res_array[j])]
-                if wt_dict[(unique_pos_array[i], unique_res_array[j])]:
-                    xbox.append(i)
-                    ybox.append(j)
-            except KeyError:
-                continue
+    if pwm_bool:
+        cmap_color = 'coolwarm'
+        for i in xi:
+            indices = np.where(tot_pos_array == unique_pos_array[i])[0]
+            N = sum(tot_count_array[indices[:]])
+            for j in yi:
+                try:
+                    p = float(mut_dict[(unique_pos_array[i], unique_res_array[j])]) / N
+                    if p > 0:
+                        log_prob = round(math.log(20 * p, 2), 2)
+                    else:
+                        log_prob = float('nan')
+                    Z[j, i] = log_prob
+                except KeyError:
+                    continue
+                try:
+                    if wt_dict[(unique_pos_array[i], unique_res_array[j])]:
+                        xbox.append(i)
+                        ybox.append(j)
+                except KeyError:
+                    continue
+    else:
+        cmap_color = 'coolwarm'
+        for i in xi:
+            for j in yi:
+                try:
+                    Z[j, i] = mut_dict[(unique_pos_array[i], unique_res_array[j])]
+                    if wt_dict[(unique_pos_array[i], unique_res_array[j])]:
+                        xbox.append(i)
+                        ybox.append(j)
+                except KeyError:
+                    continue
 
-    x_label = list(unique_pos_array)  # may ned to add list
+    x_label = list(unique_pos_array)
     y_label = list(unique_res_array)
 
     fig, ax = plt.subplots()
-    heat_map = ax.pcolormesh(Z, cmap='BuGn')
+    heat_map = ax.pcolormesh(Z, cmap=cmap_color)
     ax.set_xticks(xi + 0.5, minor=False)
     ax.set_yticks(yi + 0.5, minor=False)
     ax.set_xticklabels(x_label, minor=False)
@@ -105,9 +130,9 @@ def mk_heat_map(mut_dict, wt_seq, query_fasta_list):
     ax.tick_params(direction='out', labelsize=10, top=False, right=False)
 
     for k in range(0, len(xbox)):
-        ax.add_patch(Rectangle((xbox[k], ybox[k]), 1, 1, fill=False, edgecolor='black', lw=2))
+        ax.add_patch(Rectangle((xbox[k], ybox[k]), 1, 1, fill=False, edgecolor=almost_black, lw=2))
     plt.colorbar(heat_map)
-    plt.savefig('heat_map.png', format='png', dpi=1000)
+    plt.savefig(name, format='png', dpi=1000)
 
 
 def gen_stats(mut_per_struct_list):
@@ -117,18 +142,22 @@ def gen_stats(mut_per_struct_list):
     print "Average number of mutations per structure is {} with variance {}".format(avg_mut, var_mut)
 
 
-def main(wt_fasta, query_fasta_list, heat_map_bool):
+def main(wt_fasta, query_fasta_list, heat_map_bool, pwm_bool, name):
     """calls child functions"""
     mut_dict, mut_per_struct_list, wt_seq = compare_seq(wt_fasta, query_fasta_list)
     gen_stats(mut_per_struct_list)
     if heat_map_bool:
-        mk_heat_map(mut_dict, wt_seq, query_fasta_list)
+        mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, name)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Calculates number of mutations per seq and generates visualisation")
     parser.add_argument("-m", "--heat_map", action="store_true",
                         help="invokes heat map visualisation")
+    parser.add_argument("-pwm", action='store_true',
+                        help='display heatmap as position weight matrix. default displays raw counts.')
+    parser.add_argument("-n", "--name", default='heat_map.png',
+                        help='name of output png (default is heat_map.png')
     requiredO = parser.add_argument_group('required arguments')
     requiredO.add_argument("-w", "--wt_fasta", required=True,
                            help="fasta file for wild type protein seq")
@@ -136,4 +165,4 @@ if __name__ == '__main__':
                            help="one or more inquiry fasta")
 
     args = parser.parse_args()
-    main(args.wt_fasta, args.fasta, args.heat_map)
+    main(args.wt_fasta, args.fasta, args.heat_map, args.pwm, args.name)

@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31cbe64-f15d-4fc1-932f-840808c871d6" name="Default" comment="test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3d_normal.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/check_for_stop.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/check_oligo_script.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chord_diagram.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/color_palettes.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/combinatorial_designs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consensus_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/curate_designs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cvs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demultiplex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/make_cross_talk_jobs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/make_revert_jobs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/non_unique_fas.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oligos_from_designs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pwm.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/replace_current_ligand.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/replace_with_native.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/residue_freq.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sc_from_fas_stdout.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/score_file_plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/biosensorPostProcess.iml" afterPath="$PROJECT_DIR$/.idea/biosensorPostProcess.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="d31cbe64-f15d-4fc1-932f-840808c871d6" name="Default" comment="intial commit">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cvs_count.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cvs_test_fasta_builer.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scatter_plot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spss_output_parser.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thin_fasta.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fas_from_pdb_stdout.py" afterPath="$PROJECT_DIR$/fas_from_pdb_stdout.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen_enzdes_cutoffs.py" afterPath="$PROJECT_DIR$/gen_enzdes_cutoffs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postProcessPlot.py" afterPath="$PROJECT_DIR$/postProcessPlot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unique_score.py" afterPath="$PROJECT_DIR$/unique_score.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/color_palettes.py" afterPath="$PROJECT_DIR$/color_palettes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mutationDistribution.py" afterPath="$PROJECT_DIR$/mutationDistribution.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwm.py" afterPath="$PROJECT_DIR$/pwm.py" />
     </list>
     <ignored path="biosensorPostProcess.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +23,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/biosensor_design$run_spss_output_parser.coverage" NAME="run_spss_output_parser Coverage Results" MODIFIED="1486672386237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/raman_lab/spss_files" />
+    <SUITE FILE_PATH="coverage/biosensor_design$run_cvs_count.coverage" NAME="run_cvs_count Coverage Results" MODIFIED="1481174131592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/raman_lab/basis_set/entropy/counts" />
     <SUITE FILE_PATH="coverage/biosensor_design$run_pwm.coverage" NAME="run_pwm Coverage Results" MODIFIED="1477066410503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/raman_lab/basis_set" />
+    <SUITE FILE_PATH="coverage/biosensor_design$run_thin_fasta.coverage" NAME="run_thin_fasta Coverage Results" MODIFIED="1484079770557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Documents/raman_lab/composite_files_biosensor_design" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -52,23 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pwm.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pwm.py">
+      <file leaf-file-name="cvs_test_fasta_builer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cvs_test_fasta_builer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-              <folding>
-                <element signature="e#157#172#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cvs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cvs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="102" column="89" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="89" />
+            <state relative-caret-position="285">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
@@ -79,18 +60,8 @@
       <file leaf-file-name="prep_for_ml.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prep_for_ml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uniquify_fas.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uniquify_fas.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+            <state relative-caret-position="495">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="54" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -99,20 +70,50 @@
       <file leaf-file-name="non_unique_fas.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/non_unique_fas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cvs_count.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cvs_count.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spss_output_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spss_output_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="131" selection-end-column="15" />
               <folding>
-                <element signature="e#112#122#0" expanded="true" />
+                <element signature="e#23#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="residue_freq.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/residue_freq.py">
+      <file leaf-file-name="pwm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pwm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="29" selection-start-line="42" selection-start-column="4" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="1470">
+              <caret line="103" column="57" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scatter_plot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scatter_plot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="92" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -164,7 +165,6 @@
         <option value="$PROJECT_DIR$/CodonUsage.py" />
         <option value="$PROJECT_DIR$/mutateproteintodnapy2.py" />
         <option value="$PROJECT_DIR$/postProcessPlot.py" />
-        <option value="$PROJECT_DIR$/color_palettes.py" />
         <option value="$PROJECT_DIR$/oligos_from_designs.py" />
         <option value="$PROJECT_DIR$/score_file_plot.py" />
         <option value="$PROJECT_DIR$/.idea/tree_trial.py" />
@@ -172,13 +172,19 @@
         <option value="$PROJECT_DIR$/tree_trial.py" />
         <option value="$PROJECT_DIR$/consensus_test.py" />
         <option value="$PROJECT_DIR$/chord_diagram.py" />
-        <option value="$PROJECT_DIR$/mutationDistribution.py" />
         <option value="$PROJECT_DIR$/residue_freq.py" />
         <option value="$PROJECT_DIR$/3d_normal.py" />
         <option value="$PROJECT_DIR$/cvs.py" />
         <option value="$PROJECT_DIR$/non_unique_fas.py" />
         <option value="$PROJECT_DIR$/prep_for_ml.py" />
+        <option value="$PROJECT_DIR$/thin_fasta.py" />
         <option value="$PROJECT_DIR$/pwm.py" />
+        <option value="$PROJECT_DIR$/mutationDistribution.py" />
+        <option value="$PROJECT_DIR$/color_palettes.py" />
+        <option value="$PROJECT_DIR$/scatter_plot.py" />
+        <option value="$PROJECT_DIR$/cvs_test_fasta_builer.py" />
+        <option value="$PROJECT_DIR$/cvs_count.py" />
+        <option value="$PROJECT_DIR$/spss_output_parser.py" />
       </list>
     </option>
   </component>
@@ -218,10 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -236,10 +238,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/uniquify_fas.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -249,25 +255,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_pwm">
-    <configuration default="false" name="oligos_from_designs" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/raman_lab/oligo_prep" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="biosensorPostProcess" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oligos_from_designs.py" />
-      <option name="PARAMETERS" value="-w tetRb_DNA.fasta -f curated_cyan.fasta" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.run_spss_output_parser">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -602,7 +590,79 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="8">
+    <configuration default="false" name="run_cvs_count" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/virtualenvs/venv_biosensor_design/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/raman_lab/basis_set/entropy/counts" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="biosensorPostProcess" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cvs_count.py" />
+      <option name="PARAMETERS" value="-f 4ac0_b0_curated.fasta" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_thin_fasta" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/virtualenvs/venv_biosensor_design/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/raman_lab/composite_files_biosensor_design" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="biosensorPostProcess" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thin_fasta.py" />
+      <option name="PARAMETERS" value="-f 4ac0_cyan_curated.fasta -b B0 -a A0 -c C1" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_spss_output_parser" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/virtualenvs/venv_biosensor_design/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/raman_lab/spss_files" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="biosensorPostProcess" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spss_output_parser.py" />
+      <option name="PARAMETERS" value="-f B0S10.txt" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="oligos_from_designs" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/raman_lab/oligo_prep" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="biosensorPostProcess" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oligos_from_designs.py" />
+      <option name="PARAMETERS" value="-w tetRb_DNA.fasta -f curated_cyan.fasta" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="11">
       <item index="0" class="java.lang.String" itemvalue="Python.run_mutationDistribution" />
       <item index="1" class="java.lang.String" itemvalue="Python.run_parallel_revert" />
       <item index="2" class="java.lang.String" itemvalue="Python.run_unique_score" />
@@ -610,13 +670,11 @@
       <item index="4" class="java.lang.String" itemvalue="Python.run_curate_designs" />
       <item index="5" class="java.lang.String" itemvalue="Python.run_revert2nativeDistribution" />
       <item index="6" class="java.lang.String" itemvalue="Python.run_pwm" />
-      <item index="7" class="java.lang.String" itemvalue="Python.oligos_from_designs" />
+      <item index="7" class="java.lang.String" itemvalue="Python.run_cvs_count" />
+      <item index="8" class="java.lang.String" itemvalue="Python.run_thin_fasta" />
+      <item index="9" class="java.lang.String" itemvalue="Python.run_spss_output_parser" />
+      <item index="10" class="java.lang.String" itemvalue="Python.oligos_from_designs" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.oligos_from_designs" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -646,7 +704,21 @@
       <option name="project" value="LOCAL" />
       <updated>1466528216132</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="addition of post processing scripts and more fasta manipulation scripts">
+      <created>1478710945768</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1478710945768</updated>
+    </task>
+    <task id="LOCAL-00004" summary="intial commit">
+      <created>1478711059936</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1478711059936</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -659,48 +731,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18311875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28731343" sideWeight="0.5081043" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25462306" sideWeight="0.4918957" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329148" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257468" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29018492" sideWeight="0.4918957" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4539801" sideWeight="0.4947146" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45376956" sideWeight="0.4947146" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28731343" sideWeight="0.5081043" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.4918957" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28482586" sideWeight="0.4918957" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711443" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4539801" sideWeight="0.4947146" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -715,7 +767,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="addition of post processing scripts and more fasta manipulation scripts" />
+    <MESSAGE value="intial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="intial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -755,6 +809,16 @@
           <line>38</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cvs_count.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/thin_fasta.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -766,40 +830,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="75" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/postProcessPlot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/ramanLab/scripts/fas_from_pdb_stdout.py" />
-    <entry file="file:///usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib/backends/backend_macosx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy/lib/function_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1880">
-          <caret line="4104" column="0" selection-start-line="4104" selection-start-column="0" selection-end-line="4104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DesignSelect.pl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -832,13 +867,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/replace_native_ligand.py" />
-    <entry file="file://$PROJECT_DIR$/fas_from_pdb_stdout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/replace_with_native.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -930,24 +958,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/color_palettes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CodonUsage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" column="20" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sc_from_fas_stdout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="42" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -959,13 +973,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/tree_trial.py" />
-    <entry file="file://$PROJECT_DIR$/unique_score.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/revert2nativeDistribution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
@@ -1023,25 +1030,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oligos_from_designs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/combinatorial_designs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="13" column="39" selection-start-line="11" selection-start-column="12" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score_file_plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="110" column="14" selection-start-line="110" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1052,64 +1044,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mutationDistribution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="93" column="24" selection-start-line="87" selection-start-column="12" selection-end-line="93" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uniquify_fas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/residue_freq.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="29" selection-start-line="42" selection-start-column="4" selection-end-line="43" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cvs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="102" column="89" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="89" />
+        <state relative-caret-position="194">
+          <caret line="123" column="52" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oligos_from_designs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uniquify_fas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sc_from_fas_stdout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mutationDistribution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="132" column="91" selection-start-line="132" selection-start-column="91" selection-end-line="132" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/color_palettes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thin_fasta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+          <folding>
+            <element signature="e#23#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fas_from_pdb_stdout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unique_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/non_unique_fas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cvs_test_fasta_builer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/non_unique_fas.py">
+    <entry file="file://$PROJECT_DIR$/prep_for_ml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-          <folding>
-            <element signature="e#112#122#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="54" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prep_for_ml.py">
+    <entry file="file://$PROJECT_DIR$/score_file_plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        <state relative-caret-position="-2644">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scatter_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="92" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pwm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="1470">
+          <caret line="103" column="57" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spss_output_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="131" selection-end-column="15" />
           <folding>
-            <element signature="e#157#172#0" expanded="true" />
+            <element signature="e#23#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cvs_count.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
