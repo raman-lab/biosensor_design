@@ -53,6 +53,8 @@ def compute_entropy(parameters, total_count):
 
 def extract_top_scores(score_dict, int_to_keep):
     """filter values such that only values above the cutoff percentile are retained"""
+    if int_to_keep <= 1:
+        int_to_keep = int(round(len(score_dict) * int_to_keep))
     top_scores = collections.OrderedDict(sorted(score_dict.items(), key=operator.itemgetter(1))[:int_to_keep])
     return top_scores
 
@@ -135,8 +137,10 @@ if __name__ == '__main__':
     parser.add_argument('-n', '--number', nargs='*', type=int,  default=[10],
                         help='integer number of largest subset size to be sampled. '
                              'can accept multiple space delimited ints')
-    parser.add_argument('-l', '--largest', type=int, default=100,
-                        help='integer number specifying the number of subsets with the largest entropy scores')
+    parser.add_argument('-l', '--largest', type=float, default=0.1,
+                        help='number specifying the number or percentage of of subsets with the largest entropy scores'
+                             ' to keep. if number is greater than 1, that is how many subsets will be used. '
+                             'if number is 1 or less, percentages will be used.')
     required = parser.add_argument_group('required arguments')
     required.add_argument('-f', '--fastas', nargs='*', required=True,
                           help='fasta(s) containing protein sequences. sequences must be the same length')
