@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31cbe64-f15d-4fc1-932f-840808c871d6" name="Default" comment="intial commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cvs_count.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cvs_test_fasta_builer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scatter_plot.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spss_output_parser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thin_fasta.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/color_palettes.py" afterPath="$PROJECT_DIR$/color_palettes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mutationDistribution.py" afterPath="$PROJECT_DIR$/mutationDistribution.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pwm.py" afterPath="$PROJECT_DIR$/pwm.py" />
-    </list>
+    <list default="true" id="d31cbe64-f15d-4fc1-932f-840808c871d6" name="Default" comment="intial commit" />
     <ignored path="biosensorPostProcess.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
