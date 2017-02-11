@@ -6,6 +6,8 @@ import collections
 import math
 import operator
 import sys
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
