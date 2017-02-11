@@ -6,6 +6,8 @@ import collections
 import math
 import operator
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def generate_sets(fastas, number):
@@ -62,9 +64,33 @@ def get_counts(top_entropy_values):
     return counts
 
 
-def plot_bars(residue_counter):
+def plot_bars(residue_counter, chart_name):
     """plot bar chart. for now this is missing because I am using it on a cluster without matplotlib"""
-    pass
+    almost_gray = '#808080'
+    almost_black = '#262626'
+    fig, ax1 = plt.subplots()
+    positions = residue_counter.keys()
+    counts = residue_counter.values()
+    index = np.arange(len(positions))
+    bar_width = 0.5
+
+    rects1 = plt.bar(index, counts, bar_width, alpha=0.5, color=almost_gray)
+    plt.ylabel('Count')
+    plt.xticks(index + bar_width / 2, positions)
+    spines_to_remove = ['top', 'right']
+    for spine in spines_to_remove:
+        ax1.spines[spine].set_visible(False)
+    ax1.xaxis.set_ticks_position('none')
+    ax1.yaxis.set_ticks_position('none')
+    spines_to_keep = ['bottom', 'left']
+    for spine in spines_to_keep:
+        ax1.spines[spine].set_linewidth(0.5)
+        ax1.spines[spine].set_color(almost_black)
+    ax1.xaxis.label.set_color(almost_black)
+    ax1.yaxis.label.set_color(almost_black)
+
+    plt.savefig("{0}.png".format(chart_name), format='png', dpi=1000)
+    plt.close()
 
 
 def write_counts(residue_counter):
@@ -77,7 +103,6 @@ def write_counts(residue_counter):
 def cvs_counter(fastas, largest, number, bar_chart):
     """loop over subsets of size n. mostly uses counter objects to handle values"""
     residue_counter = collections.Counter()
-    # for n in range(2, number+1):
     for n in number:
         set_space = generate_sets(fastas, n)
         entropy_values = {}
@@ -92,7 +117,7 @@ def cvs_counter(fastas, largest, number, bar_chart):
         residue_counter = residue_counter + n_residue_counter
 
     if bar_chart:
-        plot_bars(residue_counter)
+        plot_bars(residue_counter, bar_chart)
     write_counts(residue_counter)
 
 
