@@ -4,6 +4,7 @@
 return a unique score file with only entries specified in fastas"""
 
 import argparse
+import sys
 
 
 def get_tags(fastas):
@@ -22,15 +23,12 @@ def get_tags(fastas):
     return tags
 
 
-def unique_sc(score, fastas, name):
+def unique_sc(score, fastas):
     """use tags to populate a unique score file from the composite score file"""
     tags = get_tags(fastas)
     with open(score, 'r') as f:
-        if not name:
-            name = score.split('.')[0] + '_unique.' + score.split('.')[1]
-        o = open(name, 'w')
         top = f.readline()
-        o.write(top)
+        sys.stdout.write(top)
         header = top.split()
         d_index = header.index('description')
         for line in f:
@@ -38,18 +36,16 @@ def unique_sc(score, fastas, name):
                 continue
             line_list = line.split()
             if line_list[d_index] in tags:
-                o.write(line)
-        o.close()
+                sys.stdout.write(line)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="parse a composite score file and return entries that match input fastas")
-    parser.add_argument("-n", "--name", help='name of output sc file')
+        description="parse a composite score file and write entries that match input fastas to stdout")
     requiredO = parser.add_argument_group('required arguments')
     requiredO.add_argument("-f", "--fasta", nargs='*', required=True,
                            help="one or more input fastas, which specify desired structures in output score file")
     requiredO.add_argument("-s", "--score", required=True, help='composite score file')
 
     args = parser.parse_args()
-    unique_sc(args.score, args.fasta, args.name)
+    unique_sc(args.score, args.fasta)
