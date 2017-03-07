@@ -4,7 +4,6 @@ import argparse
 import itertools
 import collections
 import math
-import operator
 import sys
 import matplotlib
 matplotlib.use('Agg')
@@ -51,12 +50,29 @@ def compute_entropy(parameters, total_count):
     return -H_s, -H_k
 
 
-def extract_top_scores(score_dict, int_to_keep):
+def extract_top_scores(score_dict, int_to_keep, invert, mean_minus_stdev):
     """filter values such that only values above the cutoff percentile are retained"""
     if int_to_keep <= 1:
         int_to_keep = int(round(len(score_dict) * int_to_keep))
-    top_scores = collections.OrderedDict(sorted(score_dict.items(), key=operator.itemgetter(1))[:int_to_keep])
-    return top_scores
+
+    if invert:
+        kept_scores = collections.OrderedDict(sorted(score_dict.items(), key=lambda (k, v): v[1])[:int_to_keep])
+    elif mean_minus_stdev:
+        mean_H_k = np.average(score_dict.values()[1])
+        stdev_H_k = np.std(score_dict.values()[1])
+        print mean_H_k
+        print stdev_H_k
+        print len(score_dict.values())
+        for k, v in score_dict.items():
+            # print v[1]
+            if not ((mean_H_k - stdev_H_k) <= v[1] <= mean_H_k):
+                del score_dict[k]
+        kept_scores = collections.OrderedDict(sorted(score_dict.items(), key=lambda (k, v): v[1]))
+        print len(kept_scores)
+    else:
+        kept_scores = collections.OrderedDict(sorted(score_dict.items(), reverse=True,
+                                                     key=lambda (k, v): v[1])[:int_to_keep])
+    return kept_scores
 
 
 def get_counts(top_entropy_values):
@@ -104,7 +120,7 @@ def write_counts(residue_counter):
         sys.stdout.write('{0}\t {1}\n'.format(residue, count))
 
 
-def cvs_counter(fastas, largest, number, bar_chart):
+def cvs_counter(fastas, largest, number, bar_chart, invert, mean_minus_stdev):
     """loop over subsets of size n. mostly uses counter objects to handle values"""
     residue_counter = collections.Counter()
     for n in number:
@@ -116,7 +132,7 @@ def cvs_counter(fastas, largest, number, bar_chart):
             freq_multiplicity = collections.Counter(subset_counter.values())
             entropy_seq, entropy_freq = compute_entropy(freq_multiplicity, len(subset_list))
             entropy_values[index_set] = (entropy_seq, entropy_freq)
-        top_entropy_values = extract_top_scores(entropy_values, largest)
+        top_entropy_values = extract_top_scores(entropy_values, largest, invert, mean_minus_stdev)
         n_residue_counter = get_counts(top_entropy_values)
         residue_counter = residue_counter + n_residue_counter
 
@@ -134,15 +150,25 @@ if __name__ == '__main__':
     )
     parser.add_argument('-b', '--bar_chart', default=False,
                         help='name of bar chart, if desired, without file type. will be saved as png.')
-    parser.add_argument('-n', '--number', nargs='*', type=int,  default=[10],
+    parser.add_argument('-n', '--number', nargs='*', type=int,  default=[5],
                         help='integer number of largest subset size to be sampled. '
                              'can accept multiple space delimited ints')
     parser.add_argument('-l', '--largest', type=float, default=0.1,
                         help='number specifying the number or percentage of of subsets with the largest entropy scores'
                              ' to keep. if number is greater than 1, that is how many subsets will be used. '
                              'if number is 1 or less, percentages will be used.')
+    filtering_group = parser.add_mutually_exclusive_group()
+    filtering_group.add_argument('-i', '--invert', action='store_true',
+                                 help='keep the lowest scores. "largest" option still used to specify'
+                                      ' how many sets to keep. only one of {invert, mean_minus_stdev} may be used.'
+                                      'if neither are used, the default action is to keep '
+                                      'highest scores')
+    filtering_group.add_argument('-mms', '--mean_minus_stdev', action='store_true',
+                                 help='keep scores that fall between the mean and one standard deviation below the'
+                                      ' mean. mean - stdev <= x <= mean. only one of {invert, mean_minus_stdev} '
+                                      'may be used. if neither are used, the default action is to keep highest scores.')
     required = parser.add_argument_group('required arguments')
     required.add_argument('-f', '--fastas', nargs='*', required=True,
                           help='fasta(s) containing protein sequences. sequences must be the same length')
     args = parser.parse_args()
-    cvs_counter(args.fastas, args.largest, args.number, args.bar_chart)
+    cvs_counter(args.fastas, args.largest, args.number, args.bar_chart, args.invert, args.mean_minus_stdev)
