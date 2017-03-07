@@ -60,15 +60,10 @@ def extract_top_scores(score_dict, int_to_keep, invert, mean_minus_stdev):
     elif mean_minus_stdev:
         mean_H_k = np.average(score_dict.values()[1])
         stdev_H_k = np.std(score_dict.values()[1])
-        print mean_H_k
-        print stdev_H_k
-        print len(score_dict.values())
         for k, v in score_dict.items():
-            # print v[1]
             if not ((mean_H_k - stdev_H_k) <= v[1] <= mean_H_k):
                 del score_dict[k]
         kept_scores = collections.OrderedDict(sorted(score_dict.items(), key=lambda (k, v): v[1]))
-        print len(kept_scores)
     else:
         kept_scores = collections.OrderedDict(sorted(score_dict.items(), reverse=True,
                                                      key=lambda (k, v): v[1])[:int_to_keep])
