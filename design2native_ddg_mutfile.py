@@ -19,13 +19,13 @@ def compare_sequences(wt_sequence, sequence):
     return mutation_dict
 
 
-def write_mutfile(index_residue_dict, id):
+def write_mutfile(index_residue_dict, identifier):
     mutation_count = len(index_residue_dict.keys())
     lines_to_write = ['total 1\n', '{0}\n'.format(mutation_count)]
     for index, residue_tuple in index_residue_dict.items():
         mutation_line = '{0} {1} {2}\n'.format(residue_tuple[0], index + 1, residue_tuple[1])
         lines_to_write.append(mutation_line)
-    with open('{0}.mutfile'.format(id[1:].rstrip()), 'w') as f:
+    with open('{0}.mutfile'.format(identifier.split('/')[-1].rstrip(), 'w')) as f:
         f.writelines(lines_to_write)
 
 
@@ -33,9 +33,9 @@ def make_design2native_ddg_mutfile(wt_fasta, fastas):
     wt_sequence = get_wt_sequence(wt_fasta)
     for fasta in fastas:
         with open(fasta, 'r') as f:
-            for id, sequence in itertools.izip_longest(f, f, fillvalue=None):
+            for identifier, sequence in itertools.izip_longest(f, f, fillvalue=None):
                 index_residue_dict = compare_sequences(wt_sequence, sequence)
-                write_mutfile(index_residue_dict, id)
+                write_mutfile(index_residue_dict, identifier)
 
 
 if __name__ == '__main__':
