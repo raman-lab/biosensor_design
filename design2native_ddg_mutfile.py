@@ -13,6 +13,9 @@ def get_wt_sequence(wt_fasta):
 
 
 def compare_sequences(wt_pose_seq, pose_seq):
+    if len(wt_pose_seq) is not len(pose_seq):
+        raise Exception('all sequences must be the same length. Note: all dashes ("-") are removed from fastas '
+                        'before sequences are processed.')
     mutation_dict = collections.OrderedDict()
     for index, residue in enumerate(pose_seq):
         if residue is not wt_pose_seq[index]:
