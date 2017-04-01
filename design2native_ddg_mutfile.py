@@ -8,14 +8,15 @@ def get_wt_sequence(wt_fasta):
     with open(wt_fasta, 'r') as f:
         f.readline()
         wt_sequence = f.readline()
-    return wt_sequence
+    wt_sequence_pose_indexed = wt_sequence.replace('-', '')
+    return wt_sequence_pose_indexed
 
 
-def compare_sequences(wt_sequence, sequence):
+def compare_sequences(wt_pose_seq, pose_seq):
     mutation_dict = collections.OrderedDict()
-    for index, residue in enumerate(sequence):
-        if residue is not wt_sequence[index]:
-            mutation_dict[index] = (wt_sequence[index], residue)
+    for index, residue in enumerate(pose_seq):
+        if residue is not wt_pose_seq[index]:
+            mutation_dict[index] = (wt_pose_seq[index], residue)
     return mutation_dict
 
 
@@ -30,11 +31,12 @@ def write_mutfile(index_residue_dict, identifier):
 
 
 def make_design2native_ddg_mutfile(wt_fasta, fastas):
-    wt_sequence = get_wt_sequence(wt_fasta)
+    wt_pose_seq = get_wt_sequence(wt_fasta)
     for fasta in fastas:
         with open(fasta, 'r') as f:
             for identifier, sequence in itertools.izip_longest(f, f, fillvalue=None):
-                index_residue_dict = compare_sequences(wt_sequence, sequence)
+                pose_seq = sequence.replace('-', '')
+                index_residue_dict = compare_sequences(wt_pose_seq, pose_seq)
                 write_mutfile(index_residue_dict, identifier)
 
 
