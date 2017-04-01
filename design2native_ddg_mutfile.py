@@ -25,7 +25,7 @@ def write_mutfile(index_residue_dict, identifier):
     for index, residue_tuple in index_residue_dict.items():
         mutation_line = '{0} {1} {2}\n'.format(residue_tuple[0], index + 1, residue_tuple[1])
         lines_to_write.append(mutation_line)
-    with open('./{0}.mutfile'.format(identifier.split('/')[-1].rstrip(), 'w')) as f:
+    with open('{0}.mutfile'.format(identifier.split('/')[-1].rstrip()), 'w') as f:
         f.writelines(lines_to_write)
 
 
