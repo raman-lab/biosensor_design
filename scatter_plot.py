@@ -30,7 +30,8 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
     # set up colors and names
     almost_gray = '#808080'
     almost_black = '#262626'
-    color_set = palette[len(data_tuple_dict) - 1]
+    # color_set = palette[len(data_tuple_dict) - 1]
+    color_set = ["#7ece5b"]
     common_score_terms = {
         'total_score': 'Total Energy (REU)',
         'fa_rep': 'Total Repulsive Energy (REU)',
@@ -69,14 +70,14 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
             if min(y) < y_min:
                 y_min = min(y)
 
-        legend = ax1.legend(loc='best', scatterpoints=1, framealpha=0.5)
+        legend = ax1.legend(loc='best', scatterpoints=1, framealpha=1)
         rect = legend.get_frame()
-        rect.set_linewidth(0.0)
+        rect.set_linewidth(0.25)
         texts = legend.texts
         for t in texts:
             t.set_color(almost_black)
-        plt.xlim(x_min, xmax=0)
-        plt.ylim(y_min, ymax=0)
+        plt.xlim(xmin=-330, xmax=-250)
+        plt.ylim(ymin=-11, ymax=0)
         plt.xlabel(common_score_terms[axes[0]], fontsize=20)
         plt.ylabel(common_score_terms[axes[1]], fontsize=20)
 
@@ -91,8 +92,8 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
             ax1.spines[spine].set_color(almost_black)
         ax1.xaxis.label.set_color(almost_black)
         ax1.yaxis.label.set_color(almost_black)
-
-        pdf.savefig(fig)
+        plt.savefig("{0}.png".format(name.split('.')[0]), format='png', dpi=1000)
+        #pdf.savefig(fig)
         plt.close()
 
 

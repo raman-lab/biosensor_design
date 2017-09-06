@@ -107,7 +107,7 @@ def gen_plots(uf_dict, f_dict, min_x, max_x, min_y, max_y, axes, name, histogram
             texts = legend.texts
             for t in texts:
                 t.set_color(almost_black)
-            plt.title('Distribution of Reverted {0} Energies'.format(entry), fontsize=25, y=1.02)
+            plt.title('Distribution of Biosensor {0} Energies'.format(entry), fontsize=25, y=1.02)
             plt.xlim(min_x, max_x)
             plt.ylim(min_y, max_y)
             plt.xlabel(common_score_terms[axes[0]], fontsize=20)
@@ -202,7 +202,7 @@ def gen_plots(uf_dict, f_dict, min_x, max_x, min_y, max_y, axes, name, histogram
             ax1.xaxis.label.set_color(almost_black)
             ax1.yaxis.label.set_color(almost_black)
 
-            plt.title('Distribution of Reverted Energies', fontsize=25, y=1.02)
+            plt.title('Distribution of Biosensor Energies', fontsize=25, y=1.02)
             plt.xlim(min_x, max_x)
             plt.ylim(min_y, max_y)
             plt.xlabel(common_score_terms[axes[0]], color=almost_black, fontsize=20)
