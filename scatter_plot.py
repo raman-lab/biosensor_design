@@ -76,10 +76,10 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
         texts = legend.texts
         for t in texts:
             t.set_color(almost_black)
-        plt.xlim(xmin=-330, xmax=-250)
-        plt.ylim(ymin=-11, ymax=0)
-        plt.xlabel(common_score_terms[axes[0]], fontsize=20)
-        plt.ylabel(common_score_terms[axes[1]], fontsize=20)
+        plt.xlim(xmin=-375, xmax=-100)
+        plt.ylim(ymin=-10, ymax=0)
+        plt.xlabel(common_score_terms[axes[0]], fontsize=15)
+        plt.ylabel(common_score_terms[axes[1]], fontsize=15)
 
         spines_to_remove = ['top', 'right']
         for spine in spines_to_remove:

@@ -55,7 +55,7 @@ def output(counts):
         sys.stdout.write('\n')
 
 
-def make_heat_map(counts, wt_dict, input_file):
+def make_heat_map(counts, wt_dict, input_file, resfile):
     almost_black = '#262626'
     positions = np.array(list(counts.keys()))
 
@@ -82,8 +82,21 @@ def make_heat_map(counts, wt_dict, input_file):
                         ybox.append(j)
             except KeyError:
                 continue
-
-    x_label = list(positions)
+    if resfile:
+        resfile_positions = []
+        with open(resfile, 'r') as f:
+            for line in f:
+                line = line.rstrip()
+                if line:
+                    first_split = line.split()[0]
+                    if first_split.isdigit():
+                        resfile_positions.append(int(first_split))
+        x_label = []
+        for p, pos in enumerate(resfile_positions):
+            if p + 1 in positions:
+                x_label.append(pos)
+    else:
+        x_label = list(positions)
     y_label = list(possible)
     masked_Z = np.ma.array(Z, mask=np.isnan(Z))
 
@@ -111,6 +124,8 @@ if __name__ == "__main__":
                              "name is chosen from first input fasta")
     parser.add_argument("-s", "--silent", action="store_true",
                         help="do not write pwm to stdout")
+    parser.add_argument("-r", "--resfile",
+                        help='if resfile is provided, labels on heatmap will be positions from resfile')
     requiredO = parser.add_argument_group('required arguments')
     requiredO.add_argument("-w", "--wt_fasta", required=True,
                            help="fasta file for wild type protein seq")
@@ -133,4 +148,4 @@ if __name__ == "__main__":
         else:
             wt_dict[index + 1] = {character: 1}
     if args.heat_map:
-        make_heat_map(counts, wt_dict, args.fasta[0])
+        make_heat_map(counts, wt_dict, args.fasta[0], args.resfile)

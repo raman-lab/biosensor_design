@@ -53,7 +53,7 @@ def dict2array3d(d):
     return key0_array, key1_array, value_array
 
 
-def mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, name):
+def mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, resfile, name):
     """create heat map of mutated residues and use subplot to identify wt residues"""
     pos_array, res_array, count_array = dict2array3d(mut_dict)
     almost_black = '#262626'
@@ -117,8 +117,21 @@ def mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, name):
                         ybox.append(j)
                 except KeyError:
                     continue
-
-    x_label = list(unique_pos_array)
+    if resfile:
+        positions = []
+        with open(resfile, 'r') as f:
+            for line in f:
+                line = line.rstrip()
+                if line:
+                    first_split = line.split()[0]
+                    if first_split.isdigit():
+                        positions.append(int(first_split))
+        x_label = []
+        for p, position in enumerate(positions):
+            if p + 1 in unique_pos_array:
+                x_label.append(position)
+    else:
+        x_label = list(unique_pos_array)
     y_label = list(unique_res_array)
 
     fig, ax = plt.subplots()
@@ -142,12 +155,12 @@ def gen_stats(mut_per_struct_list):
     print "Average number of mutations per structure is {} with variance {}".format(avg_mut, var_mut)
 
 
-def main(wt_fasta, query_fasta_list, heat_map_bool, pwm_bool, name):
+def main(wt_fasta, query_fasta_list, heat_map_bool, pwm_bool, resfile, name):
     """calls child functions"""
     mut_dict, mut_per_struct_list, wt_seq = compare_seq(wt_fasta, query_fasta_list)
     gen_stats(mut_per_struct_list)
     if heat_map_bool:
-        mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, name)
+        mk_heat_map(mut_dict, wt_seq, query_fasta_list, pwm_bool, resfile, name)
 
 
 if __name__ == '__main__':
@@ -158,6 +171,8 @@ if __name__ == '__main__':
                         help='display heatmap as position weight matrix. default displays raw counts.')
     parser.add_argument("-n", "--name", default='heat_map.png',
                         help='name of output png (default is heat_map.png')
+    parser.add_argument("-r", "--resfile",
+                        help='if resfile is provided, labels on heatmap will be positions from resfile')
     requiredO = parser.add_argument_group('required arguments')
     requiredO.add_argument("-w", "--wt_fasta", required=True,
                            help="fasta file for wild type protein seq")
@@ -165,4 +180,4 @@ if __name__ == '__main__':
                            help="one or more inquiry fasta")
 
     args = parser.parse_args()
-    main(args.wt_fasta, args.fasta, args.heat_map, args.pwm, args.name)
+    main(args.wt_fasta, args.fasta, args.heat_map, args.pwm, args.resfile, args.name)
