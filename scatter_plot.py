@@ -47,7 +47,7 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
         'SR_1_hbond_sc': 'Ligand Hydrogen Bond Energy (REU)',
         'SR_1_all_cst': 'Ligand Constraint Energy (REU)',
         'SR_1_hbond_pm': 'Number of Ligand Hydrogen Bonds (REU)',
-        'SR_1_burunsat_pm': 'Number of Buried Unsatisfied Polar Residues in Binding Pocket'
+        'SR_1_burunsat_pm': 'Number of Buried Unsatisfied Polar Residues in Binding Pocket',
 	'interface_delta_X': 'Difference in Energy with Ligand'
 		
     }
