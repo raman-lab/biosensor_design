@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import argparse
 import collections
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import sys
 from matplotlib.backends.backend_pdf import PdfPages
@@ -11,16 +13,20 @@ def get_scores(axes, score_file):
     """get data specified by axes options from the score file and store as tuples in a list"""
     data_list = []
     with open(score_file, 'r') as f:
+	f.readline()
         header = f.readline().split()
+#	print len(header)
         indices = [header.index(a) for a in axes]
 
         for line in f:
             line_list = line.split()
-            if (not line_list) or (line_list[0].startswith("#")) or (line_list[0][0].isalpha()):
+            if (not line_list) or (line_list[0].startswith("#")):
                 continue
+#	    print len(line_list)
 
             point_list = [line_list[i] for i in indices[:-1]]
             point_tuple = tuple(map(float, point_list))
+#	    print point_tuple
             data_list.append(point_tuple)
     return data_list
 
@@ -60,25 +66,27 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
         for i, score_file in enumerate(data_tuple_dict.keys()):
 
             x, y = zip(*data_tuple_dict[score_file])
+#	    print x
             if i is 0:
                 ax1.scatter(x, y, c=almost_gray, marker='o', alpha=0.5, edgecolor=almost_black, linewidth=0.15,
                             label='{0}'.format(legend_list[i]))
             else:
-                ax1.scatter(x, y, c=color_set[i-1], marker='o', alpha=0.5, edgecolor=almost_black, linewidth=0.15,
+                ax1.scatter(x, y, c=color_set[0], marker='o', alpha=0.5, edgecolor=almost_black, linewidth=0.15,
                             label='{0}'.format(legend_list[i]))
 
             if min(x) < x_min:
                 x_min = min(x)
             if min(y) < y_min:
                 y_min = min(y)
-
-        legend = ax1.legend(loc='best', scatterpoints=1, framealpha=1)
-        rect = legend.get_frame()
-        rect.set_linewidth(0.25)
-        texts = legend.texts
+	"""
+        #legend = ax1.legend(loc='best', scatterpoints=1, framealpha=1)
+        #rect = legend.get_frame()
+        #rect.set_linewidth(0.25)
+        #texts = legend.texts
         for t in texts:
             t.set_color(almost_black)
-        plt.xlim(xmin=-375, xmax=-100)
+	"""
+        plt.xlim(xmin=-800, xmax=-650)
         plt.ylim(ymin=-10, ymax=0)
         plt.xlabel(common_score_terms[axes[0]], fontsize=15)
         plt.ylabel(common_score_terms[axes[1]], fontsize=15)
@@ -105,6 +113,7 @@ def plot_score_files(x_axis, y_axis, score_files, name, description_list):
     data_tuple_lists = collections.OrderedDict()
     for score_file in score_files:
         data_tuple_lists[score_file] = get_scores(axes, score_file)
+#    print data_tuple_lists
     generate_plots(data_tuple_lists, axes, name, description_list)
 
 

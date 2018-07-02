@@ -20,6 +20,7 @@ def data_from_sc_file(axes, f, uf, true_max):
     for fileType in [uf, f]:
         for i, item in enumerate(fileType):
             with open(item) as f:
+		f.readline()
                 header = f.readline().split()
                 indices = [header.index(a) for a in axes]
 
@@ -78,7 +79,8 @@ def gen_plots(uf_dict, f_dict, min_x, max_x, min_y, max_y, axes, name, histogram
         'SR_1_hbond_sc': 'Ligand Hydrogen Bond Energy (REU)',
         'SR_1_all_cst': 'Ligand Constraint Energy (REU)',
         'SR_1_hbond_pm': 'Number of Ligand Hydrogen Bonds (REU)',
-        'SR_1_burunsat_pm': 'Number of Buried Unsatisfied Polar Residues in Binding Pocket'
+        'SR_1_burunsat_pm': 'Number of Buried Unsatisfied Polar Residues in Binding Pocket',
+	'interface_delta_X': 'Energy diff temp placeholder'
     }
 
     with PdfPages(name) as pdf:
