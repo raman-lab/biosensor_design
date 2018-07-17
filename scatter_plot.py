@@ -86,8 +86,8 @@ def generate_plots(data_tuple_dict, axes, name, legend_list):
         for t in texts:
             t.set_color(almost_black)
 	"""
-        plt.xlim(xmin=-800, xmax=-650)
-        plt.ylim(ymin=-10, ymax=0)
+        plt.xlim(xmin=-800, xmax=-500)
+        plt.ylim(ymin=-25, ymax=0)
         plt.xlabel(common_score_terms[axes[0]], fontsize=15)
         plt.ylabel(common_score_terms[axes[1]], fontsize=15)
 
