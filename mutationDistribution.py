@@ -4,6 +4,8 @@
 import argparse
 import numpy as np
 import math
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
@@ -39,6 +41,8 @@ def compare_seq(wt_fasta, query_fasta_list):
                             mut_pos_dict[(r+1, residue)] = 1
 
                 num_mut_per_query.append(mut_count)
+#    print num_mut_per_query
+    print mut_pos_dict
     return mut_pos_dict, num_mut_per_query, wt_seq
 
 
