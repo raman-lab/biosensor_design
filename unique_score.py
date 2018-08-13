@@ -27,6 +27,7 @@ def unique_sc(score, fastas):
     """use tags to populate a unique score file from the composite score file"""
     tags = get_tags(fastas)
     with open(score, 'r') as f:
+	f.readline()
         top = f.readline()
         sys.stdout.write(top)
         header = top.split()
